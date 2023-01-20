@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.gateway.discovery.enabled.lower-case-service-id",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.gateway.discovery.enabled.lower-case-service-id."
+  }
+] }
