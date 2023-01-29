@@ -4,5 +4,15 @@
       "name": "spring.cloud.gateway.discovery.enabled.lower-case-service-id",
       "type": "java.lang.String",
       "description": "Description for spring.cloud.gateway.discovery.enabled.lower-case-service-id."
-  }
-] }
+    },
+    {
+      "name": "spring.cloud.loadbalancer.ribbon.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.loadbalancer.ribbon.enabled."
+    },
+    {
+      "name": "spring.cloud.config.import-check.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.config.import-check.enabled."
+    }
+  ] }
