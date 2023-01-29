@@ -21,6 +21,9 @@ public class RotasGatewayConfiguracao {
                 .route(rota -> rota.path("/controle/usuario/cadastrar")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/cadastrar/"))
                         .uri("lb://ms-controle-usuario"))
+                .route(rota -> rota.path("/controle/usuario/{cpf}/{email}")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/{cpf}/{email}"))
+                        .uri("lb://ms-controle-usuario"))
                 .build();
     }
 
