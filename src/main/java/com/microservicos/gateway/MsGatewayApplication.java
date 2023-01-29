@@ -17,13 +17,6 @@ public class MsGatewayApplication {
         SpringApplication.run(MsGatewayApplication.class, args);
 
     }
-    @Bean
-    RouteLocator gateway(RouteLocatorBuilder rlb){
-        return rlb.routes()
-                .route(rota -> rota.path("/controle")
-                        .filters( gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/"))
-                        .uri("lb://ms-controle-usuario"))
-                .build();
-    }
+
 
 }
