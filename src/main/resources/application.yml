@@ -13,7 +13,7 @@ spring:
       discovery:
         locator:
           enabled: true
-          lowerCaseServiceId: true
+
 
 eureka:
   instance:
