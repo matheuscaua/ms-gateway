@@ -1,4 +1,4 @@
-package com.microservicos.gateway.configuracao;
+package com.microservicos.gateway.controlador.configuracao;
 
 
 import io.netty.resolver.DefaultAddressResolverGroup;
@@ -12,20 +12,24 @@ import reactor.netty.http.client.HttpClient;
 public class RotasGatewayConfiguracao {
 
     @Bean
-    RouteLocator gateway(RouteLocatorBuilder rlb){
-        return rlb.routes()
-                .route(rota -> rota.path("/controle/usuario")
+    RouteLocator gateway(RouteLocatorBuilder builder){
+        return builder.routes()
+                .route(rota -> rota.path("/usuario")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/"))
                         .uri("lb://ms-controle-usuario"))
-                .route(rota -> rota.path("/controle/usuario/{nome}")
+                .route(rota -> rota.path("/usuario/{nome}")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/{nome}"))
                         .uri("lb://ms-controle-usuario"))
-                .route(rota -> rota.path("/controle/usuario/cadastrar")
+                .route(rota -> rota.path("/usuario/cadastrar")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/cadastrar/"))
                         .uri("lb://ms-controle-usuario"))
-                .route(rota -> rota.path("/controle/usuario/{cpf}/{email}")
+                .route(rota -> rota.path("/usuario/{cpf}/{email}")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/usuario/{cpf}/{email}"))
                         .uri("lb://ms-controle-usuario"))
+                .route(rota -> rota.path("/posts/criarPosts")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec.setPath("/posts/criarPosts"))
+                        .uri("lb://ms-posts")
+                )
                 .build();
     }
 

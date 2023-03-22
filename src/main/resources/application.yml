@@ -13,8 +13,6 @@ spring:
       discovery:
         locator:
           enabled: true
-
-
 eureka:
   instance:
     prefer-ip-address: true
